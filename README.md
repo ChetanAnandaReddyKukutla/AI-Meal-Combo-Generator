@@ -2,6 +2,12 @@
 
 A sophisticated React application that generates perfectly balanced meal combinations using AI-driven algorithms. Built with React, Tailwind CSS, and Framer Motion for a beautiful, responsive user experience.
 
+## 🖼️ Application Preview
+
+![AI Meal Combo Generator Screenshot](screenshots/app-preview.png)
+
+*Experience the elegant meal planning interface with intelligent combo generation, taste profiling, and nutritional balance.*
+
 ## ✨ Features
 
 - **Smart Combo Generation**: Creates 3 unique meal combinations per day
