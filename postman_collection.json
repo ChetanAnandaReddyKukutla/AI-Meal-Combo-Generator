@@ -1,0 +1,191 @@
+{
+  "info": {
+    "name": "Combo Generator API",
+    "description": "API endpoints for the AI Meal Combo Generator",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3001/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        },
+        "description": "Check if the API server is running"
+      }
+    },
+    {
+      "name": "Get All Menu Items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/menu",
+          "host": ["{{baseUrl}}"],
+          "path": ["menu"]
+        },
+        "description": "Retrieve all menu items"
+      }
+    },
+    {
+      "name": "Get Main Dishes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/menu/main",
+          "host": ["{{baseUrl}}"],
+          "path": ["menu", "main"]
+        },
+        "description": "Get all main dish items"
+      }
+    },
+    {
+      "name": "Get Side Dishes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/menu/side",
+          "host": ["{{baseUrl}}"],
+          "path": ["menu", "side"]
+        },
+        "description": "Get all side dish items"
+      }
+    },
+    {
+      "name": "Get Drinks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/menu/drink",
+          "host": ["{{baseUrl}}"],
+          "path": ["menu", "drink"]
+        },
+        "description": "Get all drink items"
+      }
+    },
+    {
+      "name": "Generate Single Combo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usedItems\": []\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/combo/generate",
+          "host": ["{{baseUrl}}"],
+          "path": ["combo", "generate"]
+        },
+        "description": "Generate a single meal combo"
+      }
+    },
+    {
+      "name": "Generate Single Combo (with used items)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usedItems\": [\"Paneer Butter Masala\", \"Garlic Naan\", \"Sweet Lassi\"]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/combo/generate",
+          "host": ["{{baseUrl}}"],
+          "path": ["combo", "generate"]
+        },
+        "description": "Generate a combo excluding specific items"
+      }
+    },
+    {
+      "name": "Generate Multiple Combos",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"count\": 3,\n  \"usedItems\": []\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/combos/generate",
+          "host": ["{{baseUrl}}"],
+          "path": ["combos", "generate"]
+        },
+        "description": "Generate multiple meal combos"
+      }
+    },
+    {
+      "name": "Generate Weekly Combos (Rolling)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"viewMode\": \"rolling\",\n  \"selectedDay\": \"Monday\",\n  \"usedItems\": []\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/combos/weekly",
+          "host": ["{{baseUrl}}"],
+          "path": ["combos", "weekly"]
+        },
+        "description": "Generate 3-day rolling meal plan"
+      }
+    },
+    {
+      "name": "Generate Weekly Combos (Full Week)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"viewMode\": \"full-week\",\n  \"selectedDay\": \"Monday\",\n  \"usedItems\": []\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/combos/weekly",
+          "host": ["{{baseUrl}}"],
+          "path": ["combos", "weekly"]
+        },
+        "description": "Generate full 7-day meal plan"
+      }
+    }
+  ]
+}
