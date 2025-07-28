@@ -4,7 +4,7 @@ A sophisticated React application that generates perfectly balanced meal combina
 
 ## 🖼️ Application Preview
 
-![AI Meal Combo Generator Screenshot](screenshots/app-preview.png)
+![AI Meal Combo Generator Screenshot](screenshots/image.png)
 
 *Experience the elegant meal planning interface with intelligent combo generation, taste profiling, and nutritional balance.*
 
